@@ -1,0 +1,57 @@
+<!-- templates/logout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logged Out</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #2980b9;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>You have been logged out successfully.</h2>
+    <a href="file:///C:/Users/KIIT/Desktop/office/assignment%202/templates/login.html">Login Again</a>
+  </div>
+</body>
+</html>

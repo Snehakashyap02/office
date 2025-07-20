@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to FinFlow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 50px;
+      background-color: transparent;
+      z-index: 1000;
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
+    header.visible {
+      background-color: rgba(0, 0, 0, 0.2);
+      pointer-events: auto;
+    }
+
+    .header-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    header.visible .header-title {
+      opacity: 1;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 15px;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    header.visible .header-buttons {
+      opacity: 1;
+    }
+
+    .btn {
+      background-color: #ffffff;
+      color: #764ba2;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 100px; /* Increased spacing */
+    }
+
+    .main-welcome-text {
+      font-size: 3em;
+      font-weight: bold;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: popIn 2s ease-in-out forwards;
+    }
+
+    .main-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeIn 2.5s ease-in-out forwards 2s;
+    }
+
+    .about {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.2); /* Darker for contrast */
+      margin: 0 auto 80px auto;
+      padding: 60px;
+      border-radius: 12px;
+      max-width: 800px;
+      font-size: 1em;
+      line-height: 1.6;
+      backdrop-filter: blur(5px);
+      color: white;
+      animation: fadeIn 0.8s ease-out;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .about h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="mainHeader">
+    <div class="header-title">Welcome to <strong>FinFlow</strong></div>
+    <div class="header-buttons">
+      <a href="file:///C:/Users/KIIT/Desktop/office/assignment%202/templates/login.html"><button class="btn">Login</button></a>
+      <a href="file:///C:/Users/KIIT/Desktop/office/assignment%202/templates/signup.html"><button class="btn">Sign Up</button></a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="main-welcome-text">Welcome to <strong>FinFlow</strong></div>
+    <div class="main-buttons">
+      <a href="file:///C:/Users/KIIT/Desktop/office/assignment%202/templates/login.html"><button class="btn">Login</button></a>
+      <a href="file:///C:/Users/KIIT/Desktop/office/assignment%202/templates/signup.html"><button class="btn">Sign Up</button></a>
+    </div>
+  </div>
+
+  <!-- Divider to separate sections -->
+  <div style="height: 80px; background: linear-gradient(to bottom, #764ba2, rgba(0,0,0,0.2));"></div>
+
+  <!-- About Section -->
+  <div class="about" id="aboutSection">
+    <h2>About the System</h2>
+    <p>
+      <strong>FinFlow</strong> is a smart personal finance tracker designed to help users efficiently manage their income and expenses. It offers a clean and intuitive interface for secure login, tracking daily expenses, setting budgets, and visualizing financial data.
+    </p>
+    <p>
+      The platform is built using HTML, CSS, and optionally integrates with a backend like Python Flask for dynamic features. It supports features like real-time budget monitoring, category filtering, and responsive design for a smooth user experience.
+    </p>
+    <p>
+      The system is designed to be user-friendly and accessible, making it easy for individuals to track their finances and achieve financial goals. It provides a comprehensive solution for personal finance management, empowering users to take control of their finances.
+    </p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const header = document.getElementById('mainHeader');
+    const about = document.getElementById('aboutSection');
+    const heroButtons = document.querySelector('.main-buttons');
+    const heroText = document.querySelector('.main-welcome-text');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('visible');
+        about.style.display = 'block';
+        heroButtons.style.display = 'none';
+        heroText.style.display = 'none';
+      } else {
+        header.classList.remove('visible');
+        about.style.display = 'none';
+        heroButtons.style.display = 'flex';
+        heroText.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
+
