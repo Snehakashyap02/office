@@ -41,7 +41,7 @@ def dashboard():
 
     conn.close()
 
-    return render_template('dashboard.html', expenses=expenses, chart_data=chart_data, selected_category=filter_category)
+    return render_template('dash.html', expenses=expenses, chart_data=chart_data, selected_category=filter_category)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

@@ -22,7 +22,7 @@ def dashboard():
     trend_data = [825, 863, 900, 938, 938]
     trend_labels = ["Jun 14", "Jun 22", "Jun 29", "Jul 7", "Jul 14"]
 
-    return render_template("dashboard.html", user=user, transactions=transactions,
+    return render_template("dash.html", user=user, transactions=transactions,
                            trend_data=trend_data, trend_labels=trend_labels)
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # For session handling
+app.secret_key = "Suaar123"  # For session handling
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
